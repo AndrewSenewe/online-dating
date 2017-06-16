@@ -18,6 +18,10 @@ router.get('/create_restaurant', function(req, res, next) {
   res.render('create_restaurant', { title: 'Express' });
 });
 
+router.get('/edit_restaurant', function(req, res, next) {
+  res.render('edit_restaurant', { title: 'Express' });
+});
+
 router.get('/user_list', function(req, res, next) {
   res.render('user_list', { title: 'Express' });
 });
