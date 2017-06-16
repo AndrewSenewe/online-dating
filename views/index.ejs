@@ -14,31 +14,84 @@
    </head>
 
    <body>
+     <header>
+       <nav>
+         <div class="nav-wrapper" style="background-color:black">
+           <a href="#" class="brand-logo">go_Dating</a>
+           <ul id="nav-mobile" class="right hide-on-med-and-down">
+             <li><input type="text" name="username" placeholder="input your username"></li>
+             <li><input type="text" name="username" placeholder="input your password"></li>
+             <li><a type="submit" class="waves-effect waves-light btn"><i class="material-icons left">play_circle_filled</i>login</a></li>
+           </ul>
+         </div>
+       </nav>
+     </header>
+     <br><br>
      <h4 align="center">Welcome to login page</h4>
      <br>
      <br>
-      <div class="row">
-        <div class="col s4"></div>
-        <form class="col s4">
-          <div class="row">
-            <div class="input-field">
-              <i class="material-icons prefix">account_circle</i>
-              <input type="text" name="username" placeholder="input your username">
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field">
-              <i class="material-icons prefix">https</i>
-              <input type="password" name="password" placeholder="input your password">
-            </div>
-          </div>
-          <a type="submit" class="waves-effect waves-light btn"><i class="material-icons left">play_circle_filled</i>login</a>
-          <a type="submit" class="waves-effect waves-light btn"><i class="material-icons left">assignment_ind</i>register</a>
-        </form>
-        <div class="col s4"></div>
-      </div>
+     
+     <div class="row">
+       <div class="col s7"></div>
+       <form class="col s4">
+         <div class="row">
+           <div class="input-field">
+             <i class="material-icons prefix">account_circle</i>
+             <input name="name" type="text" class="validate">
+             <label class="active" for="name">name</label>
+           </div>
+           <div class="input-field">
+             <i class="material-icons prefix">supervisor_account</i>
+             <select name="gender">
+               <option value="" disabled selected>Gender</option>
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+             </select>
+           </div>
+           <div class="input-field">
+             <i class="material-icons prefix">perm_contact_calendar</i>
+             <input type="date" class="datepicker">
+             <label class="active" for="Birthday">Birthday</label>
+           </div>
+           <div class="input-field">
+             <i class="material-icons prefix">phone</i>
+             <input name="phone" type="text" class="validate">
+             <label class="active" for="phone">phone</label>
+           </div>
+           <div class="input-field">
+             <i class="material-icons prefix">email</i>
+             <input name="email" type="email" class="validate">
+             <label class="active" for="email">email</label>
+           </div>
+           <div class="input-field">
+             <i class="material-icons prefix">assignment</i>
+             <input name="username" type="text" class="validate">
+             <label class="active" for="username">username</label>
+           </div>
+           <div class="input-field">
+             <i class="material-icons prefix">https</i>
+             <input name="password" type="password" class="validate">
+             <label class="active" for="password">password</label>
+           </div>
+         </div>
+         <input type="submit" class="waves-effect waves-light btn" value="Sign up">
+       </form>
+       <div class="col s1"></div>
+     </div>
      
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script type="text/javascript" src="js/materialize.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+     <script type="text/javascript">
+           $(document).ready(function() {
+             $('select').material_select();
+           });
+           
+           $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15 // Creates a dropdown of 15 years to control year
+          });
+          
+     </script>
    </body>
  </html>

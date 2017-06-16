@@ -26,4 +26,22 @@ router.get('/couple_list', function(req, res, next) {
   res.render('couple_list', { title: 'Express' });
 });
 
+/////////////////////////////////////////////////////////////////////////
+
+router.get('/userPage', function(req, res, next) {
+  res.render('userPage', { title: 'Express' });
+});
+
+router.get('/userEditPage', function(req, res, next) {
+  res.render('userEditPage', { title: 'Express' });
+});
+
+router.get('/userListMate', function(req, res, next) {
+  res.render('userListMate', { title: 'Express' });
+});
+
+router.get('/userMate', function(req, res, next) {
+  res.render('userMate', { title: 'Express' });
+});
+
 module.exports = router;

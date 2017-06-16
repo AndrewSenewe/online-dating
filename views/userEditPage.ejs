@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <!--Import Google Icon Font-->
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Import materialize.css-->
+     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+   </head>
+   
+   <body>
+     
+     <header>
+       <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Welcome User</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+     </header>
+     <br><br>
+     
+     <h4 align="center">Update Profile</h4>
+     <br>
+     <div class="row">
+       <div class="col s3"></div>
+       <div class="col s6">
+         <form action="#" method="post">
+           <div class="row">
+             <div class="input-field">
+               <i class="material-icons prefix">account_circle</i>
+               <input name="name" type="text" class="validate">
+               <label class="active" for="name">name</label>
+             </div>
+             <div class="input-field">
+               <i class="material-icons prefix">supervisor_account</i>
+               <select name="gender">
+                 <option value="" disabled selected>Gender</option>
+                 <option value="male">Male</option>
+                 <option value="female">Female</option>
+               </select>
+             </div>
+             <div class="input-field">
+               <i class="material-icons prefix">perm_contact_calendar</i>
+               <input type="date" class="datepicker">
+               <label class="active" for="Birthday">Birthday</label>
+             </div>
+             <div class="input-field">
+               <i class="material-icons prefix">phone</i>
+               <input name="phone" type="text" class="validate">
+               <label class="active" for="phone">phone</label>
+             </div>
+             <div class="input-field">
+               <i class="material-icons prefix">email</i>
+               <input name="email" type="email" class="validate">
+               <label class="active" for="email">email</label>
+             </div>
+             <div class="input-field">
+               <i class="material-icons prefix">assignment</i>
+               <input name="username" type="text" class="validate">
+               <label class="active" for="username">username</label>
+             </div>
+             <div class="input-field">
+               <i class="material-icons prefix">https</i>
+               <input name="password" type="password" class="validate">
+               <label class="active" for="password">password</label>
+             </div>
+           </div>
+           <input type="submit" class="waves-effect waves-light btn" value="Update">
+         </form>
+       </div>
+       <div class="col s3"></div>
+     </div>
+     
+     
+     <footer style="background-color:#ee6e73; padding: 20px 20px;">
+      <div class="footer-copyright">
+         <div class="container">
+           Powered By Ade | Andrew © 2017 
+         </div>
+      </div>
+     </footer>
+           
+     
+     <!--Import jQuery before materialize.js-->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+     <script type="text/javascript">
+       $(document).ready(function() {
+         $('select').material_select();
+       });
+       
+       $(document).ready(function(){
+         $('.materialboxed').materialbox();
+        });
+     </script>
+   </body>
+   
+ </html>
