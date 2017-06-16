@@ -8,24 +8,24 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
    </head>
-   
+
    <body>
-     
+
      <header>
        <nav>
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">Welcome Admin</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="">Create Restaurant</a></li>
-            <li><a href="">Blind Date list</a></li>
-            <li><a href="">User List</a></li>
-            <li><a href="">Logout</a></li>
+            <li><a href="/admin/restaurants/create">Create Restaurant</a></li>
+            <li><a href="/admin/couples/list">Blind Date Plan</a></li>
+            <li><a href="/admin/users/list">User List</a></li>
+            <li><a href="/logout">Logout</a></li>
           </ul>
         </div>
       </nav>
      </header>
      <br><br>
-     
+
      <h4 align="center"><u>Restaurant List</u></h4>
      <br>
      <div class="row">
@@ -42,66 +42,51 @@
            </thead>
 
            <tbody>
-             <tr>
-               <td>1</td>
-               <td>Rumah Makan Padang</td>
-               <td>Depok</td>
-               <td>
-                 <a href="/edit">EDIT</a> | <a href="/delete" onclick="confirm('Are you Sure want to delete?')">DELETE</a>
-               </td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Rumah Makan Padang</td>
-               <td>Depok</td>
-               <td>
-                 <a href="/edit">EDIT</a> | <a href="/delete" onclick="confirm('Are you Sure want to delete?')">DELETE</a>
-               </td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Rumah Makan Padang</td>
-               <td>Depok</td>
-               <td>
-                 <a href="/edit">EDIT</a> | <a href="/delete" onclick="confirm('Are you Sure want to delete?')">DELETE</a>
-               </td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Rumah Makan Padang</td>
-               <td>Depok</td>
-               <td>
-                 <a href="/edit">EDIT</a> | <a href="/delete" onclick="confirm('Are you Sure want to delete?')">DELETE</a>
-               </td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Rumah Makan Padang</td>
-               <td>Depok</td>
-               <td>
-                 <a href="/edit">EDIT</a> | <a href="/delete" onclick="confirm('Are you Sure want to delete?')">DELETE</a>
-               </td>
-             </tr>
+             <%let i= 1 %>
+             <%restaurants.forEach(rest => { %>
+               <tr>
+                 <td><%=i%></td>
+                 <td><%=rest.name%></td>
+                 <td><%=rest.address%></td>
+                 <td>
+                   <a href="/admin/restaurants/edit/<%=rest.id%>"><button type="button" class="waves-effect waves-light btn" name="button">EDIT</button></a>
+                   <a onclick="myFunction(<%=rest.id%>)"><button type="button" class="waves-effect waves-light btn" name="button">DELETE</button></a>
+                 </td>
+               </tr>
+
+             <% i++ }) %>
            </tbody>
          </table>
        </div>
        <div class="col s2"></div>
      </div>
-     
-     
+
+
      <footer style="background-color:#ee6e73; padding: 20px 20px;">
       <div class="footer-copyright">
          <div class="container">
-         Powered By Ade | Andrew © 2017 
+         Powered By Ade | Andrew © 2017
          </div>
       </div>
      </footer>
-           
-     
+
+
      <!--Import jQuery before materialize.js-->
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script type="text/javascript" src="js/materialize.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+     <script type="text/javascript">
+     function myFunction(id) {
+        var txt;
+        var r = confirm("Are you sure you want to delete?");
+        if (r == true) {
+            document.location = '/admin/restaurants/delete/'+id;
+        } else {
+            document.location = '/admin/restaurants';
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+     </script>
    </body>
-   
+
  </html>

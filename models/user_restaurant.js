@@ -8,8 +8,9 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        User_restaurant.belongsTo(models.User);
-        User_restaurant.belongsTo(models.Restaurant);
+        User_restaurant.belongsTo(models.User, {foreignKey: 'userId2'});
+        // User_restaurant.belongsTo(models.User, {foreignKey: 'userId2'});
+        User_restaurant.belongsTo(models.Restaurant, {foreignKey: 'restaurantId'});
       }
     }
   });

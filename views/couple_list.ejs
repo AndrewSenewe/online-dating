@@ -8,9 +8,9 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
    </head>
-   
+
    <body>
-     
+
      <header>
        <nav>
         <div class="nav-wrapper">
@@ -25,7 +25,7 @@
       </nav>
      </header>
      <br><br>
-     
+
      <h4 align="center"><u>Couple List</u></h4>
      <br>
      <div class="row">
@@ -41,51 +41,34 @@
            </thead>
 
            <tbody>
-             <tr>
-               <td>1</td>
-               <td>Andrew and Vega</td>
-               <td>Rumah Makan Padang</td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Andrew and Vega</td>
-               <td>Rumah Makan Padang</td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Andrew and Vega</td>
-               <td>Rumah Makan Padang</td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Andrew and Vega</td>
-               <td>Rumah Makan Padang</td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Andrew and Vega</td>
-               <td>Rumah Makan Padang</td>
-             </tr>
+             <% restaurants.forEach(couple => {%>
+               <tr>
+                 <td><%=couple.id%></td>
+                 <td><%=couple.Users[0].name%> and <%=female.name%></td>
+                 <td><%=couple.name%></td>
+               </tr>
+
+        <% })%>
            </tbody>
          </table>
        </div>
        <div class="col s2"></div>
      </div>
-     
-     
+
+
      <footer style="background-color:#ee6e73; padding: 20px 20px;">
       <div class="footer-copyright">
          <div class="container">
-         Powered By Ade | Andrew © 2017 
+         Powered By Ade | Andrew © 2017
          </div>
       </div>
      </footer>
-           
-     
+
+
      <!--Import jQuery before materialize.js-->
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script type="text/javascript" src="js/materialize.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
    </body>
-   
+
  </html>

@@ -7,18 +7,18 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
+
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-      
+
     </head>
 
     <body>
       <h3 align="center">Form register</h3>
-      
+
       <div class="row">
         <div class="col s4"></div>
-        <form class="col s4">
+        <form class="col s4" action="/register" method="post">
           <div class="row">
             <div class="input-field">
               <input name="name" type="text" class="validate">
@@ -32,7 +32,7 @@
               </select>
             </div>
             <div class="input-field">
-              <input type="date" class="datepicker">
+              <input type="date" class="datepicker" name="birthday">
               <label class="active" for="Birthday">Birthday</label>
             </div>
             <div class="input-field">
@@ -56,7 +56,7 @@
         </form>
         <div class="col s4"></div>
       </div>
-      
+
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
@@ -64,12 +64,16 @@
             $(document).ready(function() {
               $('select').material_select();
             });
-            
+
             $('.datepicker').pickadate({
              selectMonths: true, // Creates a dropdown to control month
-             selectYears: 15 // Creates a dropdown of 15 years to control year
+             min: [1975,3,20],
+             max: [2017,12,31],
+
+             selectYears: 70 // Creates a dropdown of 15 years to control year
+            // yearRange: '1950:2013'
            });
-           
+
       </script>
     </body>
   </html>
